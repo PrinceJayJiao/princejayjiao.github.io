@@ -129,6 +129,11 @@
     <a href="/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>公益 404</a>
 
   </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
   </ul>
 </nav>
 
@@ -152,6 +157,66 @@
 
           <div class="content index posts-expand">
             
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/05/classic-algorithm/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/avatar.png">
+      <meta itemprop="name" content="Jay Jiao">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="往之不谏">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/03/05/classic-algorithm/" class="post-title-link" itemprop="url">classic algorithm</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2023-03-05 15:52:41 / 修改时间：15:55:43" itemprop="dateCreated datePublished" datetime="2023-03-05T15:52:41+08:00">2023-03-05</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="经典算法"><a href="#经典算法" class="headerlink" title="经典算法"></a>经典算法</h1><h2 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h2><h3 id="反转链表"><a href="#反转链表" class="headerlink" title="反转链表"></a>反转链表</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function">ListNode * <span class="title">reveserList</span><span class="params">(ListNode* head)</span></span>&#123;</span><br><span class="line">		ListNode *pre = <span class="literal">nullptr</span>,next;</span><br><span class="line">		<span class="keyword">while</span>(head)&#123;</span><br><span class="line">			next = head-&gt;next;</span><br><span class="line">			head-&gt;next = pre;</span><br><span class="line">			pre = head;</span><br><span class="line">			head = next;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> pre;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
       
   
   
@@ -263,7 +328,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2023-03-05 13:50:22 / 修改时间：15:32:41" itemprop="dateCreated datePublished" datetime="2023-03-05T13:50:22+08:00">2023-03-05</time>
+              <time title="创建时间：2023-03-05 13:50:22 / 修改时间：15:38:32" itemprop="dateCreated datePublished" datetime="2023-03-05T13:50:22+08:00">2023-03-05</time>
             </span>
 
           
@@ -292,7 +357,19 @@
 
 
 <h2 id="tensor"><a href="#tensor" class="headerlink" title="tensor"></a>tensor</h2><p>pytorch中基本的数据单元：张量</p>
-
+<h3 id="创建张量的方法"><a href="#创建张量的方法" class="headerlink" title="创建张量的方法"></a>创建张量的方法</h3><ol>
+<li>torch.ones(size)</li>
+</ol>
+<p>创建一个大小为size的，数据均为1.0 的张量</p>
+<ol start="2">
+<li>torch.zeros(size)</li>
+</ol>
+<p>创建一个大小为size的，数据均为0.0 的张量</p>
+<ol start="3">
+<li>torch.tensor(list)</li>
+</ol>
+<p>以python list为输入创建一个张量</p>
+<h3 id="张量命名"><a href="#张量命名" class="headerlink" title="张量命名"></a>张量命名</h3>
       
     </div>
 
@@ -521,12 +598,12 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-count">5</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">标签</span>
       </div>
   </nav>
