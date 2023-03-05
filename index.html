@@ -156,6 +156,161 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/05/transforms/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/avatar.png">
+      <meta itemprop="name" content="Jay Jiao">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="往之不谏">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/03/05/transforms/" class="post-title-link" itemprop="url">transforms</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2023-03-05 14:08:17 / 修改时间：15:33:06" itemprop="dateCreated datePublished" datetime="2023-03-05T14:08:17+08:00">2023-03-05</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="pytorch深度学习笔记（一）–transforms"><a href="#pytorch深度学习笔记（一）–transforms" class="headerlink" title="pytorch深度学习笔记（一）–transforms"></a>pytorch深度学习笔记（一）–transforms</h1><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>​	torchvision.transforms模块主要用于对图像进行转换等一系列预处理操作，其主要目的就是对图像数据进行增强，进而提高模型的泛化能力。对图像预处理操作主要有数据中心化、缩放、裁剪、旋转、翻转、填充、添加噪声、灰度变换、线性变换、仿射变换、亮度、饱和度、对比变换等等。</p>
+<h2 id="导入transforms"><a href="#导入transforms" class="headerlink" title="导入transforms"></a>导入transforms</h2><p>常见的代码模型如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> torchvision <span class="keyword">import</span> transforms</span><br><span class="line">preprocess = transforms.Compose([</span><br><span class="line">    transforms.Resize(<span class="number">256</span>),</span><br><span class="line">    transforms.CenterCrop(<span class="number">224</span>),</span><br><span class="line">    transforms.ToTensor(),</span><br><span class="line">    transforms.Normalize(</span><br><span class="line">        mean=[<span class="number">0.485</span>,<span class="number">0.456</span>,<span class="number">0.406</span>],</span><br><span class="line">        std=[<span class="number">0.229</span>,<span class="number">0.224</span>,<span class="number">0.225</span>]</span><br><span class="line">    )</span><br><span class="line">])</span><br></pre></td></tr></table></figure>
+
+<h2 id="transforms-Compose"><a href="#transforms-Compose" class="headerlink" title="transforms.Compose"></a>transforms.Compose</h2><p>​	这个方法是将一系列的图像转换函数进行组合，能够按照组合的顺序依次对图像进行处理操作。示例代码如上面的代码块所示。</p>
+<h2 id="transforms常用方法"><a href="#transforms常用方法" class="headerlink" title="transforms常用方法"></a>transforms常用方法</h2><h3 id="transforms-ToTensor"><a href="#transforms-ToTensor" class="headerlink" title="transforms.ToTensor()"></a>transforms.ToTensor()</h3><p>​	作用是将一个PIL Image格式的图片或者是取值范围为[0,255]，形状为[H,W,C]的numpy.ndarray数组转换为取值范围为[0.0,1.0],形状为[C,H,W]的tensor</p>
+<h3 id="transform-RandomCrop-size"><a href="#transform-RandomCrop-size" class="headerlink" title="transform.RandomCrop(size)"></a>transform.RandomCrop(size)</h3><p>​	依据给定的size随即裁剪，size可以为sequence 或者int</p>
+<ol>
+<li><p>size is sequence 裁剪后图像为 (h,w)</p>
+</li>
+<li><p>size is int ,裁剪后图像为（size,size)</p>
+</li>
+</ol>
+<h3 id="Transforms-Resize-size"><a href="#Transforms-Resize-size" class="headerlink" title="Transforms.Resize(size)"></a>Transforms.Resize(size)</h3><p>重置图像分辨率</p>
+<ol>
+<li>size is int 图像就会被转化为(size*height&#x2F;width,size)</li>
+<li>size 为h w,图像就会转为h w</li>
+</ol>
+<h3 id="Transforms-Normalize"><a href="#Transforms-Normalize" class="headerlink" title="Transforms.Normalize"></a>Transforms.Normalize</h3><p>​	对数据按通道进行标准化，即先减去均值，再除以标准差。</p>
+<p>常见代码如下</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">transforms.Normalize([</span><br><span class="line">    mean = [<span class="number">0.485</span>,<span class="number">0.456</span>,<span class="number">0.406</span>],</span><br><span class="line">    std = [<span class="number">0.229</span>,<span class="number">0.224</span>,<span class="number">0.225</span>]</span><br><span class="line">])</span><br></pre></td></tr></table></figure>
+
+
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/05/pytorch-note/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/avatar.png">
+      <meta itemprop="name" content="Jay Jiao">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="往之不谏">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/03/05/pytorch-note/" class="post-title-link" itemprop="url">pytorch-note</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2023-03-05 13:50:22 / 修改时间：15:32:41" itemprop="dateCreated datePublished" datetime="2023-03-05T13:50:22+08:00">2023-03-05</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="pytorch"><a href="#pytorch" class="headerlink" title="pytorch"></a>pytorch</h2><h2 id="pytorch-常用import"><a href="#pytorch-常用import" class="headerlink" title="pytorch 常用import"></a>pytorch 常用import</h2><ol>
+<li>import torch</li>
+<li>from torch import nn</li>
+<li>from torchvision import models</li>
+</ol>
+<h2 id="torchvision中常见models"><a href="#torchvision中常见models" class="headerlink" title="torchvision中常见models"></a>torchvision中常见models</h2><ol>
+<li>AlexNet</li>
+<li>ResNet</li>
+</ol>
+<h2 id="pillow"><a href="#pillow" class="headerlink" title="pillow"></a>pillow</h2><p>这是一个图像操作模块</p>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line">img = Image.<span class="built_in">open</span>(<span class="string">&#x27;./booby.png&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="tensor"><a href="#tensor" class="headerlink" title="tensor"></a>tensor</h2><p>pytorch中基本的数据单元：张量</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/05/my-blog-build-remark/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -366,12 +521,12 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">标签</span>
       </div>
   </nav>
