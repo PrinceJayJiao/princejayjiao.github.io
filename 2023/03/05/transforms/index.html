@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Title -->
+<title>transforms - 往之不谏</title>
+
+<!-- Icon -->
+<link rel="icon" href="https://d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg">
+
+<!-- Fonts -->
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital@0;1&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" as="style" onload="this.onload=null, this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital@0;1&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"></noscript>
+
+
+
+<!-- Style -->
+
+<link rel="stylesheet" href="/styles/main.css">
+
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-theme-pure@1.0.1/dist/main.css"> -->
+
+
+
+
+
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+
+    <meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="往之不谏" type="application/atom+xml">
+</head>
+    <body>
+        <div class="main gt-bg-theme-color-first">
+            <div class="main-content">
+                <nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="/">
+        <img class="user-avatar" src="https://d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            往之不谏
+        </div>
+    </a>
+    <button aria-label="Navbar Toggler" class="navbar-toggler" type="button" id="changeNavbar">
+        <i class="gt-c-content-color-first" style="font-size: 18px;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" height="18px" fill="currentColor">
+                <path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z" />
+            </svg>
+        </i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center; ">
+            
+                <div class="nav-item">
+                    <a href="/" class="menu gt-a-link" target="_self">首页</a>
+                </div>
+            
+                <div class="nav-item">
+                    <a href="/archives/" class="menu gt-a-link" target="_self">归档</a>
+                </div>
+            
+                <div class="nav-item">
+                    <a href="/tags/" class="menu gt-a-link" target="_self">标签</a>
+                </div>
+            
+                <div class="nav-item">
+                    <a href="/friends/" class="menu gt-a-link" target="_self">友链</a>
+                </div>
+            
+        </div>
+    </div>
+</nav>
+
+<script>
+    /* 移动端导航栏展开/收起切换 */
+    document.getElementById('changeNavbar').onclick = function() {
+        let element = document.getElementById('navbarSupportedContent');
+        if (element.style.display === 'none' || element.style.display === '') {
+            element.style.display = 'block';
+        } else { 
+            element.style.display = 'none';
+        }
+    }
+</script>
+
+                <div class="post-container">
+    <div class="post-detail gt-bg-theme-color-second gt-c-content-color-first">
+        <article class="gt-post-content">
+            <h1 class="post-title">transforms</h1>
+            <div class="post-info">
+                <time class="post-time gt-c-content-color-first">
+                    · 2023-03-05 ·</time>
+                
+                    
+                        <a href="/tags/pytorch/" class="post-tag">
+                            #pytorch</a>
+                    
+                        <a href="/tags/transforms/" class="post-tag">
+                            #transforms</a>
+                    
+                
+            </div>
+            <hr>
+            <div class="post-content gt-c-content-color-first">
+                <h1 id="pytorch深度学习笔记（一）–transforms"><a href="#pytorch深度学习笔记（一）–transforms" class="headerlink" title="pytorch深度学习笔记（一）–transforms"></a>pytorch深度学习笔记（一）–transforms</h1><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>​	torchvision.transforms模块主要用于对图像进行转换等一系列预处理操作，其主要目的就是对图像数据进行增强，进而提高模型的泛化能力。对图像预处理操作主要有数据中心化、缩放、裁剪、旋转、翻转、填充、添加噪声、灰度变换、线性变换、仿射变换、亮度、饱和度、对比变换等等。</p>
+<h2 id="导入transforms"><a href="#导入transforms" class="headerlink" title="导入transforms"></a>导入transforms</h2><p>常见的代码模型如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> torchvision <span class="keyword">import</span> transforms</span><br><span class="line">preprocess = transforms.Compose([</span><br><span class="line">    transforms.Resize(<span class="number">256</span>),</span><br><span class="line">    transforms.CenterCrop(<span class="number">224</span>),</span><br><span class="line">    transforms.ToTensor(),</span><br><span class="line">    transforms.Normalize(</span><br><span class="line">        mean=[<span class="number">0.485</span>,<span class="number">0.456</span>,<span class="number">0.406</span>],</span><br><span class="line">        std=[<span class="number">0.229</span>,<span class="number">0.224</span>,<span class="number">0.225</span>]</span><br><span class="line">    )</span><br><span class="line">])</span><br></pre></td></tr></table></figure>
+
+<h2 id="transforms-Compose"><a href="#transforms-Compose" class="headerlink" title="transforms.Compose"></a>transforms.Compose</h2><p>​	这个方法是将一系列的图像转换函数进行组合，能够按照组合的顺序依次对图像进行处理操作。示例代码如上面的代码块所示。</p>
+<h2 id="transforms常用方法"><a href="#transforms常用方法" class="headerlink" title="transforms常用方法"></a>transforms常用方法</h2><h3 id="transforms-ToTensor"><a href="#transforms-ToTensor" class="headerlink" title="transforms.ToTensor()"></a>transforms.ToTensor()</h3><p>​	作用是将一个PIL Image格式的图片或者是取值范围为[0,255]，形状为[H,W,C]的numpy.ndarray数组转换为取值范围为[0.0,1.0],形状为[C,H,W]的tensor</p>
+<h3 id="transform-RandomCrop-size"><a href="#transform-RandomCrop-size" class="headerlink" title="transform.RandomCrop(size)"></a>transform.RandomCrop(size)</h3><p>​	依据给定的size随即裁剪，size可以为sequence 或者int</p>
+<ol>
+<li><p>size is sequence 裁剪后图像为 (h,w)</p>
+</li>
+<li><p>size is int ,裁剪后图像为（size,size)</p>
+</li>
+</ol>
+<h3 id="Transforms-Resize-size"><a href="#Transforms-Resize-size" class="headerlink" title="Transforms.Resize(size)"></a>Transforms.Resize(size)</h3><p>重置图像分辨率</p>
+<ol>
+<li>size is int 图像就会被转化为(size*height&#x2F;width,size)</li>
+<li>size 为h w,图像就会转为h w</li>
+</ol>
+<h3 id="Transforms-Normalize"><a href="#Transforms-Normalize" class="headerlink" title="Transforms.Normalize"></a>Transforms.Normalize</h3><p>​	对数据按通道进行标准化，即先减去均值，再除以标准差。</p>
+<p>常见代码如下</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">transforms.Normalize([</span><br><span class="line">    mean = [<span class="number">0.485</span>,<span class="number">0.456</span>,<span class="number">0.406</span>],</span><br><span class="line">    std = [<span class="number">0.229</span>,<span class="number">0.224</span>,<span class="number">0.225</span>]</span><br><span class="line">])</span><br></pre></td></tr></table></figure>
+
+
+
+
+            </div>
+        </article>
+    </div>
+    <br>
+    
+        <div class="next-prev-post">
+            
+                <div class="prev-post">
+                    <div class="prev gt-c-content-color-first">
+                        上一篇：<a href="/2023/03/05/classic-algorithm/" 
+                            class="post-title gt-a-link">classic algorithm</a>
+                    </div>
+                </div>
+            
+            
+                <div class="next-post">
+                    <div class="next gt-c-content-color-first">
+                        下一篇：<a href="/2023/03/05/pytorch-note/" 
+                            class="post-title gt-a-link">pytorch-note</a>
+                    </div>
+                </div>
+            
+        </div>
+    
+    
+
+    
+
+    
+</div>
+
+                <div class="site-footer gt-c-content-color-first">
+    <div class="footer-main">
+        <!-- 建议保留版权信息或者添加主题信息到友链，感谢您的理解 -->
+        <!-- 文件位置：layout/_includes/footer.ejs -->
+        <span style="text-align: right; float: right;">Theme <a 
+            href="https://github.com/renbaoshuo/hexo-theme-pure" target="_blank">Pure</a> | Powered by <a 
+            href="https://hexo.io" target="_blank">Hexo</a></span>
+        <span style="text-align: left;">Footer HTML
+</span>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </body>
+</html>
