@@ -1,0 +1,14 @@
+http://example.com/2023/03/05/transforms/
+http://example.com/about/index.html
+http://example.com/categories/index.html
+http://example.com/commonweal/index.html
+http://example.com/2023/03/05/classic-algorithm/
+http://example.com/2024/04/15/hello-world/
+http://example.com/2023/03/05/my-blog-build-remark/
+http://example.com/2023/03/05/pytorch-note/
+http://example.com/
+http://example.com/tags/algorithm/
+http://example.com/tags/hexo/
+http://example.com/tags/fluid/
+http://example.com/tags/pytorch/
+http://example.com/tags/transforms/

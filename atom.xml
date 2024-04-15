@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>往之不谏</title>
+  
+  <subtitle>blog of jay</subtitle>
+  <link href="http://example.com/atom.xml" rel="self"/>
+  
+  <link href="http://example.com/"/>
+  <updated>2024-04-15T14:46:41.653Z</updated>
+  <id>http://example.com/</id>
+  
+  <author>
+    <name>Jay Jiao</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://example.com/2024/04/15/hello-world/"/>
+    <id>http://example.com/2024/04/15/hello-world/</id>
+    <published>2024-04-15T14:46:41.653Z</published>
+    <updated>2024-04-15T14:46:41.653Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>classic algorithm</title>
+    <link href="http://example.com/2023/03/05/classic-algorithm/"/>
+    <id>http://example.com/2023/03/05/classic-algorithm/</id>
+    <published>2023-03-05T07:52:41.000Z</published>
+    <updated>2024-04-15T14:46:41.653Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="经典算法"><a href="#经典算法" class="headerlink" title="经典算法"></a>经典算法</h1><h2 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h2><h3 id="反转链表"><a href="#反转链表" class="headerlink" title="反转链表"></a>反转链表</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line"><span class="function">ListNode * <span class="title">reveserList</span><span class="params">(ListNode* head)</span></span>&#123;</span><br><span class="line">ListNode *pre = <span class="literal">nullptr</span>,next;</span><br><span class="line"><span class="keyword">while</span>(head)&#123;</span><br><span class="line">next = head-&gt;next;</span><br><span class="line">head-&gt;next = pre;</span><br><span class="line">pre = head;</span><br><span class="line">head = next;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> pre;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;经典算法&quot;&gt;&lt;a href=&quot;#经典算法&quot; class=&quot;headerlink&quot; title=&quot;经典算法&quot;&gt;&lt;/a&gt;经典算法&lt;/h1&gt;&lt;h2 id=&quot;链表&quot;&gt;&lt;a href=&quot;#链表&quot; class=&quot;headerlink&quot; title=&quot;链表&quot;&gt;&lt;/a&gt;链表&lt;/h</summary>
+      
+    
+    
+    
+    
+    <category term="algorithm" scheme="http://example.com/tags/algorithm/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>transforms</title>
+    <link href="http://example.com/2023/03/05/transforms/"/>
+    <id>http://example.com/2023/03/05/transforms/</id>
+    <published>2023-03-05T06:08:17.000Z</published>
+    <updated>2024-04-15T14:46:41.663Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="pytorch深度学习笔记（一）–transforms"><a href="#pytorch深度学习笔记（一）–transforms" class="headerlink" title="pytorch深度学习笔记（一）–transforms"></a>pytorch深度学习笔记（一）–transforms</h1><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>​torchvision.transforms模块主要用于对图像进行转换等一系列预处理操作，其主要目的就是对图像数据进行增强，进而提高模型的泛化能力。对图像预处理操作主要有数据中心化、缩放、裁剪、旋转、翻转、填充、添加噪声、灰度变换、线性变换、仿射变换、亮度、饱和度、对比变换等等。</p><h2 id="导入transforms"><a href="#导入transforms" class="headerlink" title="导入transforms"></a>导入transforms</h2><p>常见的代码模型如下：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> torchvision <span class="keyword">import</span> transforms</span><br><span class="line">preprocess = transforms.Compose([</span><br><span class="line">    transforms.Resize(<span class="number">256</span>),</span><br><span class="line">    transforms.CenterCrop(<span class="number">224</span>),</span><br><span class="line">    transforms.ToTensor(),</span><br><span class="line">    transforms.Normalize(</span><br><span class="line">        mean=[<span class="number">0.485</span>,<span class="number">0.456</span>,<span class="number">0.406</span>],</span><br><span class="line">        std=[<span class="number">0.229</span>,<span class="number">0.224</span>,<span class="number">0.225</span>]</span><br><span class="line">    )</span><br><span class="line">])</span><br></pre></td></tr></table></figure><h2 id="transforms-Compose"><a href="#transforms-Compose" class="headerlink" title="transforms.Compose"></a>transforms.Compose</h2><p>​这个方法是将一系列的图像转换函数进行组合，能够按照组合的顺序依次对图像进行处理操作。示例代码如上面的代码块所示。</p><h2 id="transforms常用方法"><a href="#transforms常用方法" class="headerlink" title="transforms常用方法"></a>transforms常用方法</h2><h3 id="transforms-ToTensor"><a href="#transforms-ToTensor" class="headerlink" title="transforms.ToTensor()"></a>transforms.ToTensor()</h3><p>​作用是将一个PIL Image格式的图片或者是取值范围为[0,255]，形状为[H,W,C]的numpy.ndarray数组转换为取值范围为[0.0,1.0],形状为[C,H,W]的tensor</p><h3 id="transform-RandomCrop-size"><a href="#transform-RandomCrop-size" class="headerlink" title="transform.RandomCrop(size)"></a>transform.RandomCrop(size)</h3><p>​依据给定的size随即裁剪，size可以为sequence 或者int</p><ol><li><p>size is sequence 裁剪后图像为 (h,w)</p></li><li><p>size is int ,裁剪后图像为（size,size)</p></li></ol><h3 id="Transforms-Resize-size"><a href="#Transforms-Resize-size" class="headerlink" title="Transforms.Resize(size)"></a>Transforms.Resize(size)</h3><p>重置图像分辨率</p><ol><li>size is int 图像就会被转化为(size*height&#x2F;width,size)</li><li>size 为h w,图像就会转为h w</li></ol><h3 id="Transforms-Normalize"><a href="#Transforms-Normalize" class="headerlink" title="Transforms.Normalize"></a>Transforms.Normalize</h3><p>​对数据按通道进行标准化，即先减去均值，再除以标准差。</p><p>常见代码如下</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">transforms.Normalize([</span><br><span class="line">    mean = [<span class="number">0.485</span>,<span class="number">0.456</span>,<span class="number">0.406</span>],</span><br><span class="line">    std = [<span class="number">0.229</span>,<span class="number">0.224</span>,<span class="number">0.225</span>]</span><br><span class="line">])</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;pytorch深度学习笔记（一）–transforms&quot;&gt;&lt;a href=&quot;#pytorch深度学习笔记（一）–transforms&quot; class=&quot;headerlink&quot; title=&quot;pytorch深度学习笔记（一）–transforms&quot;&gt;&lt;/a&gt;pytor</summary>
+      
+    
+    
+    
+    
+    <category term="pytorch" scheme="http://example.com/tags/pytorch/"/>
+    
+    <category term="transforms" scheme="http://example.com/tags/transforms/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>pytorch-note</title>
+    <link href="http://example.com/2023/03/05/pytorch-note/"/>
+    <id>http://example.com/2023/03/05/pytorch-note/</id>
+    <published>2023-03-05T05:50:22.000Z</published>
+    <updated>2024-04-15T14:46:41.653Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="pytorch"><a href="#pytorch" class="headerlink" title="pytorch"></a>pytorch</h2><h2 id="pytorch-常用import"><a href="#pytorch-常用import" class="headerlink" title="pytorch 常用import"></a>pytorch 常用import</h2><ol><li>import torch</li><li>from torch import nn</li><li>from torchvision import models</li></ol><h2 id="torchvision中常见models"><a href="#torchvision中常见models" class="headerlink" title="torchvision中常见models"></a>torchvision中常见models</h2><ol><li>AlexNet</li><li>ResNet</li></ol><h2 id="pillow"><a href="#pillow" class="headerlink" title="pillow"></a>pillow</h2><p>这是一个图像操作模块</p><h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line">img = Image.<span class="built_in">open</span>(<span class="string">&#x27;./booby.png&#x27;</span>)</span><br></pre></td></tr></table></figure><h2 id="tensor"><a href="#tensor" class="headerlink" title="tensor"></a>tensor</h2><p>pytorch中基本的数据单元：张量</p><h3 id="创建张量的方法"><a href="#创建张量的方法" class="headerlink" title="创建张量的方法"></a>创建张量的方法</h3><ol><li>torch.ones(size)</li></ol><p>创建一个大小为size的，数据均为1.0 的张量</p><ol start="2"><li>torch.zeros(size)</li></ol><p>创建一个大小为size的，数据均为0.0 的张量</p><ol start="3"><li>torch.tensor(list)</li></ol><p>以python list为输入创建一个张量</p><h3 id="张量命名"><a href="#张量命名" class="headerlink" title="张量命名"></a>张量命名</h3>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;pytorch&quot;&gt;&lt;a href=&quot;#pytorch&quot; class=&quot;headerlink&quot; title=&quot;pytorch&quot;&gt;&lt;/a&gt;pytorch&lt;/h2&gt;&lt;h2 id=&quot;pytorch-常用import&quot;&gt;&lt;a href=&quot;#pytorch-常用import&quot;</summary>
+      
+    
+    
+    
+    
+    <category term="pytorch" scheme="http://example.com/tags/pytorch/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>my-blog-build-remark</title>
+    <link href="http://example.com/2023/03/05/my-blog-build-remark/"/>
+    <id>http://example.com/2023/03/05/my-blog-build-remark/</id>
+    <published>2023-03-05T02:38:58.000Z</published>
+    <updated>2024-04-15T14:46:41.653Z</updated>
+    
+    <content type="html"><![CDATA[<p>折腾了好久，终于把这个b东西搞定了，我写个简单的教程吧<br>本教程只针对windows用户在 github pages 上部署hexo博客。<br>我采用的主题是next主题，比较简约。  </p><h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><ol><li>安装 node.js<br>推荐新手使用官方安装程序安装 链接在这里：<a href="https://nodejs.org/en/">https://nodejs.org/en/</a><br>安装时一定要勾选 add to path（如果你是新手，请一定要记住这个，否则环境变量的配置对你来讲可能不简单）</li><li>安装 git<br><a href="https://git-scm.com/download/win">https://git-scm.com/download/win</a><br>一般选择64-bit (除非你用32-bit的windows，讲真我还没见过)  </li><li>安装hexo<br>新手推荐直接使用 npm 全局安装。<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure></li></ol><h2 id="建立博客根目录"><a href="#建立博客根目录" class="headerlink" title="建立博客根目录"></a>建立博客根目录</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init &#x27;folder&#x27; </span><br></pre></td></tr></table></figure><p>其中’folder’为你喜欢的名字 (不用加引号)</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd &lt;folder&gt;</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure><h2 id="基本配置"><a href="#基本配置" class="headerlink" title="基本配置"></a>基本配置</h2><p>你可以在&#x2F;根目录&#x2F;_config.yml中修改你的配置<br>hexo官网有非常详细的教程<br><a href="https://hexo.io/zh-cn/docs/configuration">https://hexo.io/zh-cn/docs/configuration</a> </p><h2 id="next主题"><a href="#next主题" class="headerlink" title="next主题"></a>next主题</h2><ol><li>clone 主题<br>改为next主题的时候遇到了很大一个坑，官网给的github链接实际上是废弃版本，你需要clone的是<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/theme-next/hexo-theme-next.git themes/next</span><br></pre></td></tr></table></figure>其他的按照官网配置即可<br>官网链接 <a href="http://theme-next.iissnan.com/">http://theme-next.iissnan.com/</a>  </li><li>修改配置<br>在站点配置文件中，改为<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">next</span></span><br></pre></td></tr></table></figure></li></ol><h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><p>hexo deploy 即可</p><img src="/2023/03/05/my-blog-build-remark/1.png" class="" title="This is an example image">]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;折腾了好久，终于把这个b东西搞定了，我写个简单的教程吧&lt;br&gt;本教程只针对windows用户在 github pages 上部署hexo博客。&lt;br&gt;我采用的主题是next主题，比较简约。  &lt;/p&gt;
+&lt;h2 id=&quot;安装hexo&quot;&gt;&lt;a href=&quot;#安装hexo&quot; cl</summary>
+      
+    
+    
+    
+    
+    <category term="hexo" scheme="http://example.com/tags/hexo/"/>
+    
+    <category term="fluid" scheme="http://example.com/tags/fluid/"/>
+    
+  </entry>
+  
+</feed>
