@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2024-04-15T14:46:41.653Z</updated>
+  <updated>2024-05-12T18:52:16.704Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>从零开始配置mac开发环境</title>
+    <link href="http://example.com/2024/05/13/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E9%85%8D%E7%BD%AEmac%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/"/>
+    <id>http://example.com/2024/05/13/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E9%85%8D%E7%BD%AEmac%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</id>
+    <published>2024-05-12T18:42:11.000Z</published>
+    <updated>2024-05-12T18:52:16.704Z</updated>
+    
+    <content type="html"><![CDATA[<p>首先你需要安装clashx 并且选择适合你的代理，确保一些资源的访问</p><h1 id="安装常用app或命令行工具"><a href="#安装常用app或命令行工具" class="headerlink" title="安装常用app或命令行工具"></a>安装常用app或命令行工具</h1><h2 id="安装homebrew"><a href="#安装homebrew" class="headerlink" title="安装homebrew"></a>安装homebrew</h2><h3 id="终端设置代理"><a href="#终端设置代理" class="headerlink" title="终端设置代理"></a>终端设置代理</h3><p>由于clashx主要针对浏览器配置代理，所以我们需要手动配置终端代理</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export http_proxy=http://127.0.0.1:7890</span><br><span class="line">http_proxy=http://127.0.0.1:7890</span><br><span class="line">all_proxy=sock5://127.0.0.1:7890</span><br></pre></td></tr></table></figure><h3 id="安装homebrew-1"><a href="#安装homebrew-1" class="headerlink" title="安装homebrew"></a>安装homebrew</h3><p>这个链接是homebrew官网</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;首先你需要安装clashx 并且选择适合你的代理，确保一些资源的访问&lt;/p&gt;
+&lt;h1 id=&quot;安装常用app或命令行工具&quot;&gt;&lt;a href=&quot;#安装常用app或命令行工具&quot; class=&quot;headerlink&quot; title=&quot;安装常用app或命令行工具&quot;&gt;&lt;/a&gt;安装常用a</summary>
+      
+    
+    
+    
+    
+    <category term="mac" scheme="http://example.com/tags/mac/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
