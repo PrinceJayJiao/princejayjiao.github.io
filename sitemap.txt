@@ -1,3 +1,5 @@
+http://example.com/2024/06/16/github-workflow/
+http://example.com/memory/index.html
 http://example.com/2024/05/13/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E9%85%8D%E7%BD%AEmac%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/
 http://example.com/2023/03/05/transforms/
 http://example.com/about/index.html

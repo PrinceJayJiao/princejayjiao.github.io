@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2024-05-12T18:52:16.704Z</updated>
+  <updated>2024-06-16T11:45:32.447Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>github workflow</title>
+    <link href="http://example.com/2024/06/16/github-workflow/"/>
+    <id>http://example.com/2024/06/16/github-workflow/</id>
+    <published>2024-06-16T11:21:19.000Z</published>
+    <updated>2024-06-16T11:45:32.447Z</updated>
+    
+    <content type="html"><![CDATA[<p>在公司实习过程中，学到了一点git相关的经验，写下来记录以下</p><p>在团队协作中，我们需要在一个代码仓库上进行合作开发，这时候如何管理成为一个比较麻烦的事。</p><p>之前认为git workflow可能比较好，但是后来接触多了之后，只能说各有各的优缺点。先大致讲一下github workflow的大致流程</p><h2 id="git-clone"><a href="#git-clone" class="headerlink" title="git clone"></a>git clone</h2><pre><code>clone远程分支到本地，保证你在本地是有一个git仓库的</code></pre><h2 id="git-pull"><a href="#git-pull" class="headerlink" title="git pull"></a>git pull</h2><p>在开始你的开发之前最好保证本地的 master分支和远程是同步的,这回避免一些可能的merge conflict。</p><p>比如你clone了一个仓库，过了十天才接到开发任务，这时候你的团队成员已经在master上做了多次提交，你的本地master版本就会落后于远程多个版本。</p><p>使用 git pull 命令，该命令会同步origin&#x2F;master到本地的master。</p><h2 id="git-checkout-b"><a href="#git-checkout-b" class="headerlink" title="git checkout -b "></a>git checkout -b <branch_name></h2><p>新建分支进行开发。比如我要新增一个分支来解决xxx访问压力过大的问题,通常我们会在master的基础上新建一个分支进行开发。</p><p>使用 git checkout -b fix&#x2F;xxx_pressure 命令新建并切换到 fix&#x2F;xxx_pressure 分支上，在你的分支上进行开发</p><h2 id="及时的commit"><a href="#及时的commit" class="headerlink" title="及时的commit"></a>及时的commit</h2><p>过去的时候，我曾经认为git 的提交需要尽可能的少，这样会保证我的git 历史比较干净。<br>实际上最好要少量多次提交，这样会让你debug比较轻松，容易定位哪次提交出现的问题。</p><h2 id="before-push"><a href="#before-push" class="headerlink" title="before push"></a>before push</h2><p>在push你的分支之前呢，你需要再次合并一下master并解决可能出现的冲突。</p><p>因为在你的开发周期内，很可能别人已经多次提交上线，这可能会导致你的代码在后面提pr的时候与别人提交的代码产生冲突。</p><p>所以在开发完成之后，切换回master</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout master</span><br></pre></td></tr></table></figure><p>拉取master最新的版本</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull</span><br></pre></td></tr></table></figure><p>切换回你的开发分支</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout &lt;your_branch_name&gt;</span><br></pre></td></tr></table></figure><p>合并master到你的开发分支上</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git merge master</span><br></pre></td></tr></table></figure><p>如果有冲突，处理冲突再提交</p><h2 id="git-push"><a href="#git-push" class="headerlink" title="git push"></a>git push</h2><p>新建的分支往往没有对应的远程分支，首次提交到远程分支的时候可能需要指定分支名</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push -u origin &lt;your_branch_name&gt;</span><br></pre></td></tr></table></figure><p>再次提交的时候只需要git push 即可</p><h2 id="ctrl-x2F-cmd-k"><a href="#ctrl-x2F-cmd-k" class="headerlink" title="ctrl&#x2F;cmd + k"></a>ctrl&#x2F;cmd + k</h2><p>在 jetbrains ide中（包括android studio）可以使用ctrl+k(macos cmd+k)来进行代码的commit和push，这样会更简洁方便。</p><p>最最重要的是你可以查看diff，这样可以确保提交是你想要提交的内容，避免错误修改等情况。</p><h2 id="github上提pr"><a href="#github上提pr" class="headerlink" title="github上提pr"></a>github上提pr</h2><p>在github上提pr，在pr界面再次查看diff，最好请同学review，这样最安全。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;在公司实习过程中，学到了一点git相关的经验，写下来记录以下&lt;/p&gt;
+&lt;p&gt;在团队协作中，我们需要在一个代码仓库上进行合作开发，这时候如何管理成为一个比较麻烦的事。&lt;/p&gt;
+&lt;p&gt;之前认为git workflow可能比较好，但是后来接触多了之后，只能说各有各的优缺点。先大致</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>从零开始配置mac开发环境</title>
